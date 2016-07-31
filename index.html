@@ -248,6 +248,144 @@
             
               
                 
+                <a class="post-title-link" href="/2016/07/28/Task24-Ajax/" itemprop="url">
+                  Task24 Ajax
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-07-28T07:29:32+08:00" content="2016-07-28">
+              2016-07-28
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/前端学习/" itemprop="url" rel="index">
+                    <span itemprop="name">前端学习</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>问答<br>-<br>ajax 是什么？有什么作用？<br>-<br>AJAX = Asynchronous JavaScript and XML, 可以异步的在后台与服务器交换数据，可以在不重载整个网页，对网页进行更新。</p>
+<p>前后端开发联调需要注意哪些事情？后端接口完成前如何 mock 数据？(npm install -g server-mock)<br>-<br>需要注意</p>
+<ul>
+<li>约定数据传输接口</li>
+<li>约定接口参数</li>
+<li>约定数据格式</li>
+</ul>
+<p>mock数据</p>
+<ul>
+<li>可以使用server-mock进行</li>
+<li>根据约定的格式进行测试</li>
+</ul>
+<p>点击按钮，使用 ajax 获取数据，如何在数据到来之前防止重复点击?<br>-<br>可以设定变量作为标记，当事件被执行的时候，将这个标记置位，执行结束后将标记复位。当事件被重复执行，在事件响应程序中加入判断标记是否被置位，如被置位，直接返回。</p>
+<p>代码<br>-</p>
+<ol>
+<li><p>封装一个 ajax 函数，能通过如下方式调用<br>-</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line">    function ajax(opts)&#123;</div><div class="line">        var xmlhttp = new XMLHttpRequest();</div><div class="line">        xmlhttp.onreadystatechange = function()&#123;</div><div class="line">            if (xmlhttp.readyState == 4) &#123;</div><div class="line">                if ( (xmlhttp.status &gt;= 200 &amp;&amp; xmlhttp.status &lt; 300) || (xmlhttp.status == 304) ) &#123;</div><div class="line">                    var json = JSON.parse(xmlhttp.responseText);</div><div class="line">                    opts.success(json);</div><div class="line">                &#125; else &#123;</div><div class="line">                    opts.error(xmlhttp.status);</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;;</div><div class="line">        if (opts.type.toLowerCase() === &apos;post&apos;)&#123;</div><div class="line">            var datastr = &quot;&quot;;</div><div class="line">            for(var x in opts.data)&#123;</div><div class="line">                datastr += x + &apos;=&apos; + opts.data[x] + &apos;&amp;&apos; ;</div><div class="line">            &#125;</div><div class="line">            xmlhttp.open(&apos;POST&apos;, opts.url, true);</div><div class="line">            xmlhttp.send( datastr.substring(0,datastr.length-1));</div><div class="line">        &#125;</div><div class="line">        if(opts.type.toLowerCase() === &apos;get&apos;)&#123;</div><div class="line">            xmlhttp.open(&apos;GET&apos;, opts.url, true);</div><div class="line">            xmlhttp.send(null);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">document.querySelector(&apos;#btn&apos;).addEventListener(&apos;click&apos;, function()&#123;</div><div class="line">    ajax(&#123;</div><div class="line">        url: &apos;getData.php&apos;,   //接口地址</div><div class="line">        type: &apos;get&apos;,               // 类型， post 或者 get,</div><div class="line">        data: &#123;</div><div class="line">            username: &apos;xiaoming&apos;,</div><div class="line">            password: &apos;abcd1234&apos;</div><div class="line">        &#125;,</div><div class="line">        success: function(ret)&#123;</div><div class="line">            console.log(ret);       // &#123;status: 0&#125;</div><div class="line">        &#125;,</div><div class="line">        error: function()&#123;</div><div class="line">           console.log(&apos;出错了&apos;);</div><div class="line">        &#125;</div><div class="line">    &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+</li>
+<li><p>实现如下加载更多的功能。<br>-<br>效果如下： <a href="http://jrgzuoye.applinzi.com/作业安排/jscode/JS9-jqueryajax/1.html" target="_blank" rel="external">http://jrgzuoye.applinzi.com/作业安排/jscode/JS9-jqueryajax/1.html</a></p>
+</li>
+</ol>
+<p><a href="http://2.zhangyu921.applinzi.com/task24/task2402.html" target="_blank" rel="external">演示地址</a></p>
+<ol>
+<li>实现注册表单验证功能<br>-<br>效果如下：<a href="http://jrgzuoye.applinzi.com/作业安排/jscode/JS7-ajax/3.html" target="_blank" rel="external">http://jrgzuoye.applinzi.com/作业安排/jscode/JS7-ajax/3.html</a></li>
+</ol>
+<p><a href="http://2.zhangyu921.applinzi.com/task24/task2403.html" target="_blank" rel="external">演示地址</a></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/07/26/Task22-JavaScript-DOM相关/" itemprop="url">
                   Task22 JavaScript DOM相关
                 </a>
@@ -428,7 +566,8 @@
 
       
         
-          <h2 id="动手"><a href="#动手" class="headerlink" title="动手"></a>动手</h2><ol>
+          <p>动手<br>-</p>
+<ol>
 <li><p>初学者在本地安装 Apache 与 PHP。安装 xampp 套件即可。XAMPP 里面包含 Apache 和 PHP.windows 用户也可安装WAMP，安装包体积会小一些。对于后端熟悉的同学可单独安装Apache 和 PHP。<br><img src="https://leanote.com/api/file/getImage?fileId=579579a2ab644135ea022053" alt="title"></p>
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/07/26/Task23-熟悉后端语言/#more" rel="contents">
@@ -502,7 +641,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-count">3</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
