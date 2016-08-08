@@ -94,7 +94,7 @@
 <meta property="og:image" content="https://leanote.com/api/file/getImage?fileId=57a6f1ccab644133ed041ed0">
 <meta property="og:image" content="https://leanote.com/api/file/getImage?fileId=57a6f2a7ab644133ed041ed9">
 <meta property="og:image" content="https://leanote.com/api/file/getImage?fileId=57a6f2ddab644133ed041edc">
-<meta property="og:updated_time" content="2016-08-08T06:30:38.738Z">
+<meta property="og:updated_time" content="2016-08-08T06:35:10.152Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="task25 jQuery DOM&事件">
 <meta name="twitter:description" content="这节真的拖了很久啊~">
@@ -367,9 +367,16 @@ focus
 blur
 resize
 hover
-</code></pre><h3 id="通用方法包括-on方法、trigger方法、off方法"><a href="#通用方法包括-on方法、trigger方法、off方法" class="headerlink" title="通用方法包括 on方法、trigger方法、off方法"></a>通用方法包括 on方法、trigger方法、off方法</h3><h4 id="on方法"><a href="#on方法" class="headerlink" title="on方法"></a>on方法</h4><p>on方法是jQuery事件绑定的统一接口，简便方法是on方法的简写形势。接受两个参数，第一个是事件名称，第二个是回调函数。<br>    $(‘li’).on(‘click’, function (e){<br>        console.log($(this).text());<br>    });</p>
-<p>值得注意的是，在回调函数中的this关键字指的是发生事件的DOM对象。为了使用jQuery方法，必须将DOM转化为jQuery对象。</p>
-<p>on方法还可以为当前元素的某一个子元素，添加回调函数。<br>    $(‘ul’).on(‘click’, ‘li’, function(e){<br>        console.log(this);<br>    });<br>这样可以为ul下的li绑定click事件。click事件还是在ul元素上触发，只是在触发的时候会检查event对象的target属性是否为li，如果是li再执行回调函数。这样写，可以对绑定事件之后生成的li依然有效。</p>
+</code></pre><h3 id="通用方法包括-on方法、trigger方法、off方法"><a href="#通用方法包括-on方法、trigger方法、off方法" class="headerlink" title="通用方法包括 on方法、trigger方法、off方法"></a>通用方法包括 on方法、trigger方法、off方法</h3><h4 id="on方法"><a href="#on方法" class="headerlink" title="on方法"></a>on方法</h4><p>on方法是jQuery事件绑定的统一接口，简便方法是on方法的简写形势。接受两个参数，第一个是事件名称，第二个是回调函数。</p>
+<pre><code>$(&apos;li&apos;).on(&apos;click&apos;, function (e){
+    console.log($(this).text());
+});
+</code></pre><p>值得注意的是，在回调函数中的this关键字指的是发生事件的DOM对象。为了使用jQuery方法，必须将DOM转化为jQuery对象。</p>
+<p>on方法还可以为当前元素的某一个子元素，添加回调函数。</p>
+<pre><code>$(&apos;ul&apos;).on(&apos;click&apos;, &apos;li&apos;, function(e){
+    console.log(this);
+});
+</code></pre><p>这样可以为ul下的li绑定click事件。click事件还是在ul元素上触发，只是在触发的时候会检查event对象的target属性是否为li，如果是li再执行回调函数。这样写，可以对绑定事件之后生成的li依然有效。</p>
 <h4 id="trigger方法"><a href="#trigger方法" class="headerlink" title="trigger方法"></a>trigger方法</h4><p>trigger方法用于触发回调函数，trigger的中文意思就是扳机。</p>
 <pre><code>$(&apos;li&apos;).trigger(&apos;click&apos;);
 </code></pre><p>上面代码是执行所有li元素上绑定的click事件回调函数，而且不会触发浏览器默认行为。</p>
@@ -410,14 +417,12 @@ function() { // 回调函数
 );
 </code></pre><h3 id="stop方法，delay方法"><a href="#stop方法，delay方法" class="headerlink" title="stop方法，delay方法"></a>stop方法，delay方法</h3><ul>
 <li><p>stop方法立即停止当前元素执行的动画。</p>
-<p>  $(‘li’).click(function(){</p>
-<pre><code>$(&apos;div&apos;).stop();//停止div标签正在执行的动画
-</code></pre><p>  });</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(&apos;li&apos;).click(function()&#123;</div><div class="line">    $(&apos;div&apos;).stop();//停止div标签正在执行的动画</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 </li>
 <li><p>delay方法可以使动画暂停一段时间后继续执行。</p>
-<p>  $(“#foo”).slideUp(300).delay(800).fadeIn(400)</p>
 </li>
 </ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(&quot;#foo&quot;).slideUp(300).delay(800).fadeIn(400)</div></pre></td></tr></table></figure>
 <p>上面代码表示，slideUp动画之后，暂停800毫秒，然后继续执行fadeIn动画。</p>
 <h2 id="如何设置和获取元素内部-HTML内容？如何设置和获取元素内部文本？"><a href="#如何设置和获取元素内部-HTML内容？如何设置和获取元素内部文本？" class="headerlink" title="如何设置和获取元素内部 HTML内容？如何设置和获取元素内部文本？"></a>如何设置和获取元素内部 HTML内容？如何设置和获取元素内部文本？</h2><p>设置和获取元素内部的HTML元素，可以通过jQuery对象的.html()方法，相当于DOM元素的innerHTML方法。</p>
 <pre><code>$(&apos;li&apos;).html(&apos;&lt;img src=&quot;img.jpg&quot;&gt;&apos;);
