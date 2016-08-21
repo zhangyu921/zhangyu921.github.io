@@ -344,99 +344,6 @@
             
               
                 
-                <a class="post-title-link" href="/2016/08/20/Untitled/" itemprop="url">
-                  未命名
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-08-20T17:37:40+08:00" content="2016-08-20">
-              2016-08-20
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
                 <a class="post-title-link" href="/2016/08/08/task26-jQuery-常用方法-ajax/" itemprop="url">
                   task26 jQuery 常用方法&ajax
                 </a>
@@ -499,32 +406,12 @@
 
       
         
-          
-            <h1 id="问答"><a href="#问答" class="headerlink" title="问答"></a>问答</h1><h2 id="1-Jquery-中，-document-ready-是什么意思？和window-onload-的区别？-还有其他什么写法或者替代方法？"><a href="#1-Jquery-中，-document-ready-是什么意思？和window-onload-的区别？-还有其他什么写法或者替代方法？" class="headerlink" title="1. Jquery 中， \$(document).ready()是什么意思？和window.onload 的区别？ 还有其他什么写法或者替代方法？"></a>1. Jquery 中， \$(document).ready()是什么意思？和window.onload 的区别？ 还有其他什么写法或者替代方法？</h2><p>\$(document).ready() 接受一个函数作为参数， 是用来在文档节点加载完成后，在执行的代码。还有一种简便写法 直接写在\$()里：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(function()&#123;</div><div class="line">console.log(&apos;ready!&apos;);</div><div class="line">&#125;);//当文档加载完成，提示ready！</div></pre></td></tr></table></figure></p>
-<h3 id="document-ready-与window-onload-的区别"><a href="#document-ready-与window-onload-的区别" class="headerlink" title="\$(document).ready()与window.onload()的区别"></a>\$(document).ready()与window.onload()的区别</h3><ol>
-<li>执行时间不同：</li>
-</ol>
-<ul>
-<li>$(document).ready()在文档DOM结构绘制完毕后就开始执行。</li>
-<li>window.onload()需要在页面全部，包括图片，加载完成后，再执行。</li>
-</ul>
-<ol>
-<li>可以执行的函数数量</li>
-</ol>
-<ul>
-<li>$(document).ready()可以绑定多个函数，而window.onload()则只能使用一个函数。</li>
-</ul>
-<p>##3. \$node.html() 和 \$node.text()的区别?</p>
-<p>jQuery元素的html方法相当于DOM元素的innerHTML方法，可以读取和更改元素内的HTML内容。</p>
-<p>而jQuery元素的text方法相当于DOM元素的innerText方法，可以读取和更改元素内文本内容。</p>
-<h2 id="extend-的作用和用法"><a href="#extend-的作用和用法" class="headerlink" title="\$.extend 的作用和用法?"></a>\$.extend 的作用和用法?</h2><p>$.extend可以用来合并多个对象，接收两个或多个对象参数，返回合并后的对象。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var settings = &#123; validate: false, limit: 5, name: &quot;foo&quot; &#125;;</div><div class="line">var options = &#123; validate: true, name: &quot;bar&quot; &#125;;</div><div class="line">jQuery.extend(settings, options);</div><div class="line">//相当于</div><div class="line">settings = &#123;validate: true, limit: 5, name: &quot;bar&quot;&#125;;</div></pre></td></tr></table></figure>
-<p>第一个参数相当于待修改的对象，若不想改变原来的值，可以使用空对象。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var empty = &#123;&#125;;</div><div class="line">var defaults = &#123; validate: false, limit: 5, name: &quot;foo&quot; &#125;;</div><div class="line">var options = &#123; validate: true, name: &quot;bar&quot; &#125;;</div><div class="line">var settings = jQuery.extend(empty, defaults, options);</div></pre></td></tr></table></figure>
-<h2 id="JQuery-的链式调用是什么？"><a href="#JQuery-的链式调用是什么？" class="headerlink" title="JQuery 的链式调用是什么？"></a>JQuery 的链式调用是什么？</h2><p>由于jQuery中，大多数方法都返回一个jquery对象，所以在新返回的对象上依然可以使用jquery方法，所以可以对jquery进行链式调用。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(&apos;li&apos;).eq(0).find(&apos;a&apos;).click();</div></pre></td></tr></table></figure>
-<h2 id="JQuery-ajax-中缓存怎样控制"><a href="#JQuery-ajax-中缓存怎样控制" class="headerlink" title="JQuery ajax 中缓存怎样控制?"></a>JQuery ajax 中缓存怎样控制?</h2><h2 id="jquery-中-data-函数的作用"><a href="#jquery-中-data-函数的作用" class="headerlink" title="jquery 中 data 函数的作用"></a>jquery 中 data 函数的作用</h2>
-          
+          <h1 id="问答"><a href="#问答" class="headerlink" title="问答"></a>问答</h1><h2 id="1-Jquery-中，-document-ready-是什么意思？和window-onload-的区别？-还有其他什么写法或者替代方法？"><a href="#1-Jquery-中，-document-ready-是什么意思？和window-onload-的区别？-还有其他什么写法或者替代方法？" class="headerlink" title="1. Jquery 中， \$(document).ready()是什么意思？和window.onload 的区别？ 还有其他什么写法或者替代方法？"></a>1. Jquery 中， \$(document).ready()是什么意思？和window.onload 的区别？ 还有其他什么写法或者替代方法？</h2><p>\$(document).ready() 接受一个函数作为参数， 是用来在文档节点加载完成后，在执行的代码。还有一种简便写法 直接写在\$()里：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(function()&#123;</div><div class="line">console.log(&apos;ready!&apos;);</div><div class="line">&#125;);//当文档加载完成，提示ready！</div></pre></td></tr></table></figure></p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/08/08/task26-jQuery-常用方法-ajax/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -1057,7 +944,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">7</span>
+              <span class="site-state-item-count">6</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
