@@ -1,0 +1,688 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="任务作业," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="问答：dom对象的innerText和innerHTML有什么区别？.innerText 和 .innerHTML都是DOM元素的可写属性。
+读取innerText的时候，会将该元素包含的的所有文本内容作为字符串返回，若该元素具有下级元素，则会依次进行字符串的拼接。
+而.innerHTML是返回HTML结构
+通过对.innerText 和 .innerHTML进行赋值，可以改变当前页面元素。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Task22 JavaScript DOM相关">
+<meta property="og:url" content="https://zhangyu921.github.io/2016/07/26/task22-JavaScript-DOM相关/index.html">
+<meta property="og:site_name" content="Yu's">
+<meta property="og:description" content="问答：dom对象的innerText和innerHTML有什么区别？.innerText 和 .innerHTML都是DOM元素的可写属性。
+读取innerText的时候，会将该元素包含的的所有文本内容作为字符串返回，若该元素具有下级元素，则会依次进行字符串的拼接。
+而.innerHTML是返回HTML结构
+通过对.innerText 和 .innerHTML进行赋值，可以改变当前页面元素。">
+<meta property="og:image" content="https://leanote.com/api/file/getImage?fileId=5791854fab644135ea01c3a8">
+<meta property="og:image" content="https://leanote.com/api/file/getImage?fileId=579185a1ab644133ed01c6ec">
+<meta property="og:image" content="https://leanote.com/api/file/getImage?fileId=57918e92ab644133ed01cc1a">
+<meta property="og:image" content="https://leanote.com/api/file/getImage?fileId=57918a73ab644135ea01c5ef">
+<meta property="og:image" content="https://leanote.com/api/file/getImage?fileId=5791cb0dab644135ea01ca2a">
+<meta property="og:image" content="https://leanote.com/api/file/getImage?fileId=5791cb6bab644133ed01d02a">
+<meta property="og:image" content="https://leanote.com/api/file/getImage?fileId=5791cc93ab644135ea01ca48">
+<meta property="og:image" content="https://leanote.com/api/file/getImage?fileId=5791de6fab644133ed01d5e8">
+<meta property="og:image" content="https://leanote.com/api/file/getImage?fileId=5791dee1ab644135ea01cf2c">
+<meta property="og:image" content="https://leanote.com/api/file/getImage?fileId=5791cd20ab644133ed01d052">
+<meta property="og:image" content="https://leanote.com/api/file/getImage?fileId=5792285eab644133ed01ecd9">
+<meta property="og:image" content="https://leanote.com/api/file/getImage?fileId=579229d0ab644135ea01e302">
+<meta property="og:image" content="https://leanote.com/api/file/getImage?fileId=5792dd02ab644135ea01e8dc">
+<meta property="og:image" content="https://leanote.com/api/file/getImage?fileId=5792df90ab644135ea01e903">
+<meta property="og:image" content="https://leanote.com/api/file/getImage?fileId=5792e012ab644133ed01f19e">
+<meta property="og:image" content="https://leanote.com/api/file/getImage?fileId=57934d32ab644135ea01ecc7">
+<meta property="og:image" content="https://leanote.com/api/file/getImage?fileId=57934d79ab644135ea01eccc">
+<meta property="og:updated_time" content="2016-07-26T10:33:02.367Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Task22 JavaScript DOM相关">
+<meta name="twitter:description" content="问答：dom对象的innerText和innerHTML有什么区别？.innerText 和 .innerHTML都是DOM元素的可写属性。
+读取innerText的时候，会将该元素包含的的所有文本内容作为字符串返回，若该元素具有下级元素，则会依次进行字符串的拼接。
+而.innerHTML是返回HTML结构
+通过对.innerText 和 .innerHTML进行赋值，可以改变当前页面元素。">
+<meta name="twitter:image" content="https://leanote.com/api/file/getImage?fileId=5791854fab644135ea01c3a8">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="https://zhangyu921.github.io/2016/07/26/task22-JavaScript-DOM相关/"/>
+
+  <title> Task22 JavaScript DOM相关 | Yu's </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Yu's</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Just a simple blog</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Task22 JavaScript DOM相关
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-07-26T18:20:38+08:00" content="2016-07-26">
+              2016-07-26
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/前端学习/" itemprop="url" rel="index">
+                    <span itemprop="name">前端学习</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="问答："><a href="#问答：" class="headerlink" title="问答："></a>问答：</h2><h2 id="dom对象的innerText和innerHTML有什么区别？"><a href="#dom对象的innerText和innerHTML有什么区别？" class="headerlink" title="dom对象的innerText和innerHTML有什么区别？"></a>dom对象的innerText和innerHTML有什么区别？</h2><p>.innerText 和 .innerHTML都是DOM元素的可写属性。</p>
+<p>读取innerText的时候，会将该元素包含的的所有文本内容作为字符串返回，若该元素具有下级元素，则会依次进行字符串的拼接。<br><img src="https://leanote.com/api/file/getImage?fileId=5791854fab644135ea01c3a8" alt="title"></p>
+<p>而.innerHTML是返回HTML结构<br><img src="https://leanote.com/api/file/getImage?fileId=579185a1ab644133ed01c6ec" alt="title"></p>
+<p>通过对.innerText 和 .innerHTML进行赋值，可以改变当前页面元素。<br><a id="more"></a></p>
+<h2 id="elem-children和elem-childNodes的区别？"><a href="#elem-children和elem-childNodes的区别？" class="headerlink" title="elem.children和elem.childNodes的区别？"></a>elem.children和elem.childNodes的区别？</h2><p><img src="https://leanote.com/api/file/getImage?fileId=57918e92ab644133ed01cc1a" alt="title"></p>
+<ul>
+<li>elem.children 返回的是该元素下所以子元素。</li>
+<li>elem.childNodes则返回的是所有子节点，在HTML中出现的换行、空格都会产生一个文本节点，都会被返回。</li>
+</ul>
+<h2 id="查询元素有几种常见的方法？"><a href="#查询元素有几种常见的方法？" class="headerlink" title="查询元素有几种常见的方法？"></a>查询元素有几种常见的方法？</h2><p><img src="https://leanote.com/api/file/getImage?fileId=57918a73ab644135ea01c5ef" alt="title"></p>
+<p>elem.querySelectorAll(‘…’) 返回所有符合的元素的数组。</p>
+<h2 id="如何创建一个元素？如何给元素设置属性？"><a href="#如何创建一个元素？如何给元素设置属性？" class="headerlink" title="如何创建一个元素？如何给元素设置属性？"></a>如何创建一个元素？如何给元素设置属性？</h2><p>使用document.creatElement(‘标签名’)创建一个元素。<br><img src="https://leanote.com/api/file/getImage?fileId=5791cb0dab644135ea01ca2a" alt="title"></p>
+<p>添加id属性：<br><img src="https://leanote.com/api/file/getImage?fileId=5791cb6bab644133ed01d02a" alt="title"></p>
+<p>添加class：<br><img src="https://leanote.com/api/file/getImage?fileId=5791cc93ab644135ea01ca48" alt="title"></p>
+<p>除此之外还有通用的方法：<br>getAttribute()用于获取元素的attribute值：<br><img src="https://leanote.com/api/file/getImage?fileId=5791de6fab644133ed01d5e8" alt="title"></p>
+<p>createAttribute()方法生成一个新的属性对象节点，并返回它:<br><code>attribute = document.createAttribute(name);</code></p>
+<p>setAttribute()方法用于设置元素属性:<br><img src="https://leanote.com/api/file/getImage?fileId=5791dee1ab644135ea01cf2c" alt=""></p>
+<hr>
+<p>createTextNode方法用来生成文本节点，参数为所要生成的文本节点的内容。</p>
+<p>createDocumentFragment方法生成一个DocumentFragment对象。使用DocumentFragment对象的好处是，在不属于当前的文本的地方进行构造HTML，不会引起页面频繁刷新。</p>
+<h2 id="元素的添加、删除？"><a href="#元素的添加、删除？" class="headerlink" title="元素的添加、删除？"></a>元素的添加、删除？</h2><p>例如使用.appendChild()在body元素后面添加之前创建的div元素(生成HTML元素节点)：<br><img src="https://leanote.com/api/file/getImage?fileId=5791cd20ab644133ed01d052" alt="title"><br>insertBefore()可以在某元素前面插入元素。</p>
+<p>replaceChild()可以替换一个元素，它需要传递两个参数，一个是新元素，另一个是旧元素。<br><code>div.replaceChild(newChild,oldChild)</code></p>
+<p>使用removeChild()方法删除一个子元素。<br><code>parentNode.removeChild(childNode);</code></p>
+<h2 id="DOM0-事件和DOM2级在事件监听使用方式上有什么区别？"><a href="#DOM0-事件和DOM2级在事件监听使用方式上有什么区别？" class="headerlink" title="DOM0 事件和DOM2级在事件监听使用方式上有什么区别？"></a>DOM0 事件和DOM2级在事件监听使用方式上有什么区别？</h2><p>JavaScript指定事件处理程序，就是把一个方法赋值给一个元素的事件处理属性。例如：<br>    var btnClick = document.getElementById(‘btnClick’);<br>    btnClick.onclick = function(){alert(this);};<br>onclick即为一个事件处理程序属性，当btnClick被点击时，后面的程序将会被执行。</p>
+<p>需要删除，给事件处理程序属性（onclick）赋值为null即可。</p>
+<hr>
+<p>DOM2事件处理程序通过两个方法进行定义，addEventListener 和 removeEventListen。<br>每个节点都具有这两个方法，他们分别接受三个参数：事件类型，事件执行程序，和一个布尔参数用来描述事件处理阶段(true表示捕获阶段调用程序，false代表冒泡阶段执行)。<br><img src="https://leanote.com/api/file/getImage?fileId=5792285eab644133ed01ecd9" alt="title"><br>需要注意的是，匿名函数不可以通过removeEventListener()方法进行移除，虽然匿名函数的执行的结果相同，但实际句柄不同。同样的匿名函数不是同一个匿名函数。</p>
+<p>所以需要移除的事件处理程序应事先定义出来：<br><img src="https://leanote.com/api/file/getImage?fileId=579229d0ab644135ea01e302" alt="title"></p>
+<h2 id="attachEvent与addEventListener的区别？"><a href="#attachEvent与addEventListener的区别？" class="headerlink" title="attachEvent与addEventListener的区别？"></a>attachEvent与addEventListener的区别？</h2><p>IE并不支持addEventListener和removeEventListener方法，而是实现了两个类似的方法 attachEvent、detachEvent。</p>
+<p>两个方法分别接受两个参数：事件处理函数、事件处理程序。IE不支持冒泡以外的其他方法（事实上大多数情况都使用冒泡）。</p>
+<blockquote>
+<p>在添加事件处理程序事addEventListener和attachEvent主要有几个区别:</p>
+<p>参数个数不相同，这个最直观，addEventListener有三个参数，attachEvent只有两个，attachEvent添加的事件处理程序只能发生在冒泡阶段，addEventListener第三个参数可以决定添加的事件处理程序是在捕获阶段还是冒泡阶段处理（我们一般为了浏览器兼容性都设置为冒泡阶段）</p>
+<p>第一个参数意义不同，addEventListener第一个参数是事件类型（比如click，load），而attachEvent第一个参数指明的是事件处理函数名称（onclick，onload）</p>
+<p>事件处理程序的作用域不相同，addEventListener的作用域是元素本身，this是指的触发元素，而attachEvent事件处理程序会在全局变量内运行，this是window，所以刚才例子才会返回undefined，而不是元素id</p>
+<p>为一个事件添加多个事件处理程序时，执行顺序不同，addEventListener添加会按照添加顺序执行，而attachEvent添加多个事件处理程序时顺序无规律(添加的方法少的时候大多是按添加顺序的反顺序执行的，但是添加的多了就无规律了)，所以添加多个的时候，不依赖执行顺序的还好，若是依赖于函数执行顺序，最好自己处理，不要指望浏览器</p>
+</blockquote>
+<h2 id="解释IE事件冒泡和DOM2事件传播机制？"><a href="#解释IE事件冒泡和DOM2事件传播机制？" class="headerlink" title="解释IE事件冒泡和DOM2事件传播机制？"></a>解释IE事件冒泡和DOM2事件传播机制？</h2><ul>
+<li><p>2级DOM的时间传播分为三个阶段：</p>
+<ol>
+<li>避祸阶段(capturing)，事件从顶级文档树节点一级一级向下遍历，直到到达该事件的目标结点。</li>
+<li>到达事件的目标结点，执行目标节点的事件处理程序。</li>
+<li>事件气泡(bubbing)，事件从目标节点一级一级向上回溯，直到顶级文档树节点。</li>
+</ol>
+</li>
+<li><p>IE的事件传播只有第2、3两个阶段。</p>
+</li>
+</ul>
+<h2 id="如何阻止事件冒泡？-如何阻止默认事件？"><a href="#如何阻止事件冒泡？-如何阻止默认事件？" class="headerlink" title="如何阻止事件冒泡？ 如何阻止默认事件？"></a>如何阻止事件冒泡？ 如何阻止默认事件？</h2><p>可以通过event对象的preventDefault()阻止默认行为，stopPropagation()，阻止事件进一步捕获或冒泡。<br><img src="https://leanote.com/api/file/getImage?fileId=5792dd02ab644135ea01e8dc" alt="title"></p>
+<p>通过冒泡事件，body会执行alert(2):<br><img src="https://leanote.com/api/file/getImage?fileId=5792df90ab644135ea01e903" alt="title"></p>
+<p>当执行stopPropagation()阻止冒泡的继续，body无法执行alert2：<br><img src="https://leanote.com/api/file/getImage?fileId=5792e012ab644133ed01f19e" alt="title"></p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>1 有如下代码<br>-<br>要求：当点击每一个元素li时控制台展示该元素的文本内容。不考虑兼容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;ul class=&quot;ct&quot;&gt;</div><div class="line">    &lt;li&gt;这里是&lt;/li&gt;</div><div class="line">    &lt;li&gt;饥人谷&lt;/li&gt;</div><div class="line">    &lt;li&gt;前端6班&lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div><div class="line">&lt;script&gt;</div><div class="line">//todo ...</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure></p>
+<p>2 补全代码，要求：<br>-<br>当点击按钮开头添加时在<code>&lt;li&gt;这里是&lt;/li&gt;</code>元素前添加一个新元素，内容为用户输入的非空字符串；当点击结尾添加时在<code>&lt;li&gt;前端6班&lt;/li&gt;</code>后添加用户输入的非空字符串.<br>当点击每一个元素li时控制台展示该元素的文本内容。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;ul class=&quot;ct&quot;&gt;</div><div class="line">    &lt;li&gt;这里是&lt;/li&gt;</div><div class="line">    &lt;li&gt;饥人谷&lt;/li&gt;</div><div class="line">    &lt;li&gt;前端6班&lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div><div class="line">&lt;input class=&quot;ipt-add-content&quot; placeholder=&quot;添加内容&quot;/&gt;</div><div class="line">&lt;button id=&quot;btn-add-start&quot;&gt;开头添加&lt;/button&gt;</div><div class="line">&lt;button id=&quot;btn-add-end&quot;&gt;结尾添加&lt;/button&gt;</div><div class="line">&lt;script&gt;</div><div class="line">//todo ...</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure></p>
+<p><strong><a href="http://book.jirengu.com/jirengu-inc/jrg-vip9/members/%E5%BC%A0%E5%AE%87/task22-1.html" target="_blank" rel="external">代码1、2</a></strong></p>
+<p>3 补全代码<br>-<br>要求：当鼠标放置在li元素上，会在img-preview里展示当前li元素的data-img对应的图片。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;ul class=&quot;ct&quot;&gt;</div><div class="line">    &lt;li data-img=&quot;1.png&quot;&gt;鼠标放置查看图片1&lt;/li&gt;</div><div class="line">    &lt;li data-img=&quot;2.png&quot;&gt;鼠标放置查看图片2&lt;/li&gt;</div><div class="line">    &lt;li data-img=&quot;3.png&quot;&gt;鼠标放置查看图片3&lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div><div class="line">&lt;div class=&quot;img-preview&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;script&gt;</div><div class="line">//todo ...</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure></p>
+<p><strong><a href="http://book.jirengu.com/jirengu-inc/jrg-vip9/members/%E5%BC%A0%E5%AE%87/task22-2.html" target="_blank" rel="external">代码3</a></strong></p>
+<p>4 实现如下图Tab切换的功能<br>-<br><img src="https://leanote.com/api/file/getImage?fileId=57934d32ab644135ea01ecc7" alt="title"></p>
+<p><strong><a href="http://book.jirengu.com/jirengu-inc/jrg-vip9/members/%E5%BC%A0%E5%AE%87/task22-4.html" target="_blank" rel="external">代码4</a></strong></p>
+<p>5 实现下图的模态框功能<br>-<br><img src="https://leanote.com/api/file/getImage?fileId=57934d79ab644135ea01eccc" alt=""></p>
+<p><strong><a href="http://book.jirengu.com/jirengu-inc/jrg-vip9/members/%E5%BC%A0%E5%AE%87/task22-5.html" target="_blank" rel="external">代码5</a></strong></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/任务作业/" rel="tag">#任务作业</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/07/26/task23-熟悉后端语言/" rel="next" title="Task23 熟悉后端语言">
+                <i class="fa fa-chevron-left"></i> Task23 熟悉后端语言
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/07/28/task24-Ajax/" rel="prev" title="Task24 Ajax">
+                Task24 Ajax <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.png"
+               alt="不是鱿鱼" />
+          <p class="site-author-name" itemprop="name">不是鱿鱼</p>
+          <p class="site-description motion-element" itemprop="description">做繁华的人</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">7</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#问答："><span class="nav-number">1.</span> <span class="nav-text">问答：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dom对象的innerText和innerHTML有什么区别？"><span class="nav-number">2.</span> <span class="nav-text">dom对象的innerText和innerHTML有什么区别？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#elem-children和elem-childNodes的区别？"><span class="nav-number">3.</span> <span class="nav-text">elem.children和elem.childNodes的区别？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查询元素有几种常见的方法？"><span class="nav-number">4.</span> <span class="nav-text">查询元素有几种常见的方法？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何创建一个元素？如何给元素设置属性？"><span class="nav-number">5.</span> <span class="nav-text">如何创建一个元素？如何给元素设置属性？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#元素的添加、删除？"><span class="nav-number">6.</span> <span class="nav-text">元素的添加、删除？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DOM0-事件和DOM2级在事件监听使用方式上有什么区别？"><span class="nav-number">7.</span> <span class="nav-text">DOM0 事件和DOM2级在事件监听使用方式上有什么区别？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#attachEvent与addEventListener的区别？"><span class="nav-number">8.</span> <span class="nav-text">attachEvent与addEventListener的区别？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解释IE事件冒泡和DOM2事件传播机制？"><span class="nav-number">9.</span> <span class="nav-text">解释IE事件冒泡和DOM2事件传播机制？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何阻止事件冒泡？-如何阻止默认事件？"><span class="nav-number">10.</span> <span class="nav-text">如何阻止事件冒泡？ 如何阻止默认事件？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">11.</span> <span class="nav-text">代码</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">不是鱿鱼</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

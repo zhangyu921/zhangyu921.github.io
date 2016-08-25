@@ -1,0 +1,666 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="任务作业," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="动手-
+
+初学者在本地安装 Apache 与 PHP。安装 xampp 套件即可。XAMPP 里面包含 Apache 和 PHP.windows 用户也可安装WAMP，安装包体积会小一些。对于后端熟悉的同学可单独安装Apache 和 PHP。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Task23 熟悉后端语言">
+<meta property="og:url" content="https://zhangyu921.github.io/2016/07/26/task23-熟悉后端语言/index.html">
+<meta property="og:site_name" content="Yu's">
+<meta property="og:description" content="动手-
+
+初学者在本地安装 Apache 与 PHP。安装 xampp 套件即可。XAMPP 里面包含 Apache 和 PHP.windows 用户也可安装WAMP，安装包体积会小一些。对于后端熟悉的同学可单独安装Apache 和 PHP。">
+<meta property="og:image" content="https://leanote.com/api/file/getImage?fileId=579579a2ab644135ea022053">
+<meta property="og:image" content="https://leanote.com/api/file/getImage?fileId=579579f7ab644135ea02205d">
+<meta property="og:image" content="https://leanote.com/api/file/getImage?fileId=57958bb3ab644135ea022224">
+<meta property="og:image" content="https://leanote.com/api/file/getImage?fileId=57958d82ab644135ea02223e">
+<meta property="og:updated_time" content="2016-07-28T00:50:19.308Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Task23 熟悉后端语言">
+<meta name="twitter:description" content="动手-
+
+初学者在本地安装 Apache 与 PHP。安装 xampp 套件即可。XAMPP 里面包含 Apache 和 PHP.windows 用户也可安装WAMP，安装包体积会小一些。对于后端熟悉的同学可单独安装Apache 和 PHP。">
+<meta name="twitter:image" content="https://leanote.com/api/file/getImage?fileId=579579a2ab644135ea022053">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="https://zhangyu921.github.io/2016/07/26/task23-熟悉后端语言/"/>
+
+  <title> Task23 熟悉后端语言 | Yu's </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Yu's</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Just a simple blog</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Task23 熟悉后端语言
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-07-26T18:03:00+08:00" content="2016-07-26">
+              2016-07-26
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/前端学习/" itemprop="url" rel="index">
+                    <span itemprop="name">前端学习</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>动手<br>-</p>
+<ol>
+<li><p>初学者在本地安装 Apache 与 PHP。安装 xampp 套件即可。XAMPP 里面包含 Apache 和 PHP.windows 用户也可安装WAMP，安装包体积会小一些。对于后端熟悉的同学可单独安装Apache 和 PHP。<br><img src="https://leanote.com/api/file/getImage?fileId=579579a2ab644135ea022053" alt="title"></p>
+<a id="more"></a>
+</li>
+<li><p>学习 xampp或者wamp 的简单配置使用，在本地启动 web 服务器，通过浏览器访问，通过浏览器打开本地 webserver 下的 php 文件，截图展示。<br><img src="https://leanote.com/api/file/getImage?fileId=579579f7ab644135ea02205d" alt="title"></p>
+</li>
+<li><p>练习 新浪云 SAE的使用（支持后端语言），通过 git 上传自己的代码（一个简单的 php 文件）到新浪云，贴出线上地址。<br>我的线上地址：<a href="http://zhangyu921.applinzi.com/" target="_blank" rel="external">http://zhangyu921.applinzi.com/</a></p>
+</li>
+</ol>
+<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>简单描述下web 服务器、PHP、数据库、浏览器是如何实现动态网站的?<br>-<br>首先，<br>web服务器，一般指网站服务器，向浏览器等web客户端提供文档，放置网页文件供互联网请求访问。</p>
+<p>PHP (Hypertext Preprocessor),即“超文本预处理器”,主要目标是允许网络开发人员快速编写动态页面；是一种HTML内嵌式的语言，是一种在服务器端执行的嵌入HTML文档的脚本语言，语言的风格有类似于C语言；免费且使用广泛。</p>
+<p>数据库（Database）是按照数据结构来组织、存储和管理数据的仓库。<br>静态页面区别于动态页面，指的是没有后台数据库、不含程序和不可交互的页面，写出来是什么样子，访问的时候也是这个样子。</p>
+<hr>
+<p><img src="https://leanote.com/api/file/getImage?fileId=57958bb3ab644135ea022224" alt="title"></p>
+<ol>
+<li>通过本机配置的DNS域名解析服务器，浏览器得到用户输入的URL对应得web服务器ip地址。</li>
+<li>通过HTTP协议（超文本传输协议）去连接上述IP地址的服务器系统，通过默认80端口（默认的端口是80，也有其他端口，输入URL时一般不用输入端口）请求Apache服务器上相应目录下的php文件（如index.php）。</li>
+<li>web服务器本身不能处理php动态语言脚本文件，就寻找并委托PHP应用服务器来处理（服务器端事先得安装PHP应用服务器），web服务器将用户请求访问的php文件（如index.php）文件交给PHP应用服务器。</li>
+<li>PHP应用服务器接收php文件（如index.php），打开并解释php文件，最终翻译成html静态代码，再将html静态代码交还给web服务器，web服务器将接收到的html静态代码输出到客户端浏览器（即用户）。</li>
+<li>浏览器收到Web服务器的响应后，接收并下载服务器端的html静态代码，然后浏览器解读代码，最终将网页呈现出来（由于不同的浏览器对于代码的解读规则会不一样，所以不同浏览器对于相同的网页呈现的最终页面效果会有所差异）。</li>
+</ol>
+<h2 id="常见的-WEB-服务器有哪些？"><a href="#常见的-WEB-服务器有哪些？" class="headerlink" title="常见的 WEB 服务器有哪些？"></a>常见的 WEB 服务器有哪些？</h2><ul>
+<li><p>IIS<br>Microsoft的Web服务器产品为Internet Information Services （IIS），IIS 是允许在公共Intranet或Internet上发布信息的Web服务器。ⅡS是目前最流行的Web服务器产品之一，很多著名的网站都是建立在ⅡS的平台上。IIS提供了一个图形界面的管理工具，称为Internet服务管理器，可用于监视配置和控制Internet服务。<br>IIS是一种Web服务组件，其中包括Web服务器、FTP服务器、NNTP服务器和SMTP服务器，分别用于网页浏览、文件传输、新闻服务和邮件发送等方面，它使得在网络（包括互联网和局域网）上发布信息成了一件很容易的事。它提供ISAPI(Intranet Server API）作为扩展Web服务器功能的编程接口；同时，它还提供一个Internet数据库连接器，可以实现对数据库的查询和更新。</p>
+</li>
+<li><p>Kangle<br>  kangle web服务器（简称：kangle）是一款跨平台、功能强大、安全稳定、易操作的高性能web服务器和反向代理服务器软件。除此：kangle也是一款专为做虚拟主机研发的web服务器。实现虚拟主机独立进程、独立身份运行。用户之间安全隔离，一个用户出问题不影响其他用户。安全支持php、asp、asp·net、java、ruby等多种动态开发语言。</p>
+</li>
+<li><p>WebSphere<br>WebSphere Application Server 是一种功能完善、开放的Web应用程序服务器，是IBM电子商务计划的核心部分，它是基于 Java 的应用环境，用于建立、部署和管理 Internet 和 Intranet Web 应用程序。这一整套产品进行了扩展，以适应 Web应用程序服务器的需要，范围从简单到高级直到企业级。<br>WebSphere 针对以 Web 为中心的开发人员，他们都是在基本 HTTP服务器和CGI编程技术上成长起来的。IBM 将提供 WebSphere 产品系列，通过提供综合资源、可重复使用的组件、功能强大并易于使用的工具、以及支持 HTTP 和 IIOP 通信的可伸缩运行时环境，来帮助这些用户从简单的 Web应用程序转移到电子商务世界。</p>
+</li>
+<li><p>WebLogic<br>BEA WebLogic Server是一种多功能、基于标准的web应用服务器，为企业构建自己的应用提供了坚实的基础。各种应用开发、部署所有关键性的任务，无论是集成各种系统和数据库，还是提交服务、跨 Internet 协作，起始点都是 BEA WebLogic Server。由于 它具有全面的功能、对开放标准的遵从性、多层架构、支持基于组件的开发，基于 Internet 的企业都选择它来开发、部署最佳的应用。<br>BEA WebLogic Server 在使应用服务器成为企业应用架构的基础方面继续处于领先地位。BEA WebLogic Server 为构建集成化的企业级应用提供了稳固的基础，它们以 Internet 的容量和速度，在连网的企业之间共享信息、提交服务，实现协作自动化。</p>
+</li>
+<li><p>Apache<br>Apache仍然是世界上用的最多的Web服务器，市场占有率达60%左右。它源于NCSAhttpd服务器，当NCSAWWW服务器项目停止后，那些使用NCSA WWW服务器的人们开始交换用于此服务器的补丁，这也是apache名称的由来（pache 补丁）。世界上很多著名的网站都是Apache的产物，它的成功之处主要在于它的源代码开放、有一支开放的开发队伍、支持跨平台的应用（可以运行在几乎所有的Unix、Windows、Linux系统平台上）以及它的可移植性等方面。</p>
+</li>
+<li><p>Tomcat<br>Tomcat是一个开放源代码、运行servlet和JSP Web应用软件的基于Java的Web应用软件容器。Tomcat Server是根据servlet和JSP规范进行执行的，因此我们就可以说Tomcat Server也实行了Apache-Jakarta规范且比绝大多数商业应用软件服务器要好。<br>Tomcat是Java Servlet 2.2和JavaServer Pages 1.1技术的标准实现，是基于Apache许可证下开发的自由软件。Tomcat是完全重写的Servlet API 2.2和JSP 1.1兼容的Servlet/JSP容器。Tomcat使用了JServ的一些代码，特别是Apache服务适配器。随着Catalina Servlet引擎的出现，Tomcat第四版号的性能得到提升，使得它成为一个值得考虑的Servlet/JSP容器，因此许多WEB服务器都是采用Tomcat。</p>
+</li>
+<li><p>Jboss<br>是一个基于J2EE的开放源代码的应用服务器。 JBoss代码遵循LGPL许可，可以在任何商业应用中免费使用，而不用支付费用。JBoss是一个管理EJB的容器和服务器，支持EJB 1.1、EJB 2.0和EJB3的规范。但JBoss核心服务不包括支持servlet/JSP的WEB容器，一般与Tomcat或Jetty绑定使用。</p>
+</li>
+</ul>
+<p><img src="https://leanote.com/api/file/getImage?fileId=57958d82ab644135ea02223e" alt="服务器使用占比"></p>
+<h2 id="打开浏览器，在地址栏输入-http-jirengu-com-页面展现了饥人谷官网的信息，整个过程发生了什么？（饥人谷官网后台语言-php-web服务器-nginx，数据库-mysql）"><a href="#打开浏览器，在地址栏输入-http-jirengu-com-页面展现了饥人谷官网的信息，整个过程发生了什么？（饥人谷官网后台语言-php-web服务器-nginx，数据库-mysql）" class="headerlink" title="打开浏览器，在地址栏输入 http://jirengu.com 页面展现了饥人谷官网的信息，整个过程发生了什么？（饥人谷官网后台语言 php,web服务器 nginx，数据库 mysql）"></a>打开浏览器，在地址栏输入 <a href="http://jirengu.com" target="_blank" rel="external">http://jirengu.com</a> 页面展现了饥人谷官网的信息，整个过程发生了什么？（饥人谷官网后台语言 php,web服务器 nginx，数据库 mysql）</h2><ol>
+<li><p>当输入一个url（<a href="http://jirengu.com），浏览器收到后，需要查找到这个url后对应的web服务器ip地址。浏览器会通过以下方式顺序查询。" target="_blank" rel="external">http://jirengu.com），浏览器收到后，需要查找到这个url后对应的web服务器ip地址。浏览器会通过以下方式顺序查询。</a></p>
+<ol>
+<li>先通过浏览器自己的缓存进行查找。缓存储存的是之前进行查询后的记录。每个浏览器储存DNS记录的时间不同，通常在2到30分钟不等。</li>
+<li>操作系统检查本地hosts文件是否关联相应网址映射，如果有直接返回，完成域名的解析。</li>
+<li>如果hosts没有，则查找本地DNS解析器缓存是否有这个网址的映射关系，如果有直接返回，完成域名解析。</li>
+<li>如果上面都没有，则在TCP/IP从参数中设置的首选DNS服务器查询，如果该查询的域名包含在配置区域资源中，则返回解析结果给浏览器，完成域名解析，此解析具有权威性</li>
+<li>如果要查询的域名不在本地DNS服务器区域解析，但该服务器已经缓存了此映射，则调用这个IP地址映射，此解析不具有权威性</li>
+<li>如果上述条件都失效，则根据本地DNS服务器的设置，是否进行转发查询。如果未用转发模式，本地DNS酒吧请求发至“根DNS服务器”，“根DNS服务器”收到请求后，会判断这个域名（.com）是谁授权管理，然后返回一个负责该顶级域名的服务器IP，本地DNS服务器收到IP后，发送查询请求。这台负责.com的DNF服务器收到请求后，找到jirengu.com的映射，发给本地DNS服务器。</li>
+</ol>
+</li>
+<li><p>浏览器通过HTTP超文本传输协议，去连接得到的IP地址web服务器系统，通过默认的80端口，请求nginx服务器下对应的index。nginx收到请求后判断index请求所对应的文件，若为html直接发送给浏览器解析；若为php，则交给服务器上的php应用服务器解析成html，解析过程中，若页面内有需要获取数据库内容，则PHP通过mysql数据库接口，对mysql请求数据，得到数据后解析成html，再发送给浏览器。</p>
+<ul>
+<li>php因为完全部署在服务端上，最终用户接触不多所以称为后端语言，而js是跟随html一起发送到用户端的，用于与用户交互，所以称为前端语言。</li>
+</ul>
+</li>
+<li><p>浏览器收到html文件后，进行解析渲染成页面，呈献给用户。</p>
+</li>
+</ol>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/任务作业/" rel="tag">#任务作业</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/07/26/task22-JavaScript-DOM相关/" rel="prev" title="Task22 JavaScript DOM相关">
+                Task22 JavaScript DOM相关 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.png"
+               alt="不是鱿鱼" />
+          <p class="site-author-name" itemprop="name">不是鱿鱼</p>
+          <p class="site-description motion-element" itemprop="description">做繁华的人</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">7</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题"><span class="nav-number">1.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常见的-WEB-服务器有哪些？"><span class="nav-number">2.</span> <span class="nav-text">常见的 WEB 服务器有哪些？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#打开浏览器，在地址栏输入-http-jirengu-com-页面展现了饥人谷官网的信息，整个过程发生了什么？（饥人谷官网后台语言-php-web服务器-nginx，数据库-mysql）"><span class="nav-number">3.</span> <span class="nav-text">打开浏览器，在地址栏输入 http://jirengu.com 页面展现了饥人谷官网的信息，整个过程发生了什么？（饥人谷官网后台语言 php,web服务器 nginx，数据库 mysql）</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">不是鱿鱼</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
