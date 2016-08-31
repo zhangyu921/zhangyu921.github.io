@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="算法," />
 
 
 
@@ -84,15 +84,16 @@
 
 
 
-<meta name="description" content="做繁华的人">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Yu's">
-<meta property="og:url" content="https://zhangyu921.github.io/tags/Ajax/index.html">
+<meta name="description" content="12345678910111213141516171819202122//输出一个字符串的全排列function permutate(str) &amp;#123;  var result = [];  if(str.length &amp;gt; 1) &amp;#123;    var left = str[0];    var rest = str.slice(1, str.length);    var preR">
+<meta property="og:type" content="article">
+<meta property="og:title" content="一个全排列实现">
+<meta property="og:url" content="https://zhangyu921.github.io/2016/08/31/一个全排列实现/index.html">
 <meta property="og:site_name" content="Yu's">
-<meta property="og:description" content="做繁华的人">
+<meta property="og:description" content="12345678910111213141516171819202122//输出一个字符串的全排列function permutate(str) &amp;#123;  var result = [];  if(str.length &amp;gt; 1) &amp;#123;    var left = str[0];    var rest = str.slice(1, str.length);    var preR">
+<meta property="og:updated_time" content="2016-08-31T15:01:58.864Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Yu's">
-<meta name="twitter:description" content="做繁华的人">
+<meta name="twitter:title" content="一个全排列实现">
+<meta name="twitter:description" content="12345678910111213141516171819202122//输出一个字符串的全排列function permutate(str) &amp;#123;  var result = [];  if(str.length &amp;gt; 1) &amp;#123;    var left = str[0];    var rest = str.slice(1, str.length);    var preR">
 
 
 
@@ -113,9 +114,9 @@
 
 
 
-  <link rel="canonical" href="https://zhangyu921.github.io/tags/Ajax/"/>
+  <link rel="canonical" href="https://zhangyu921.github.io/2016/08/31/一个全排列实现/"/>
 
-  <title> 标签: Ajax | Yu's </title>
+  <title> 一个全排列实现 | Yu's </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -136,7 +137,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -224,46 +225,124 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h2 >
-        Ajax
-        <small>标签</small>
-      </h2>
-    </div>
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                一个全排列实现
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-08-31T23:01:03+08:00" content="2016-08-31">
+              2016-08-31
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
       
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+      
+        <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//输出一个字符串的全排列</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">permutate</span>(<span class="params">str</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> result = [];</div><div class="line"></div><div class="line">  <span class="keyword">if</span>(str.length &gt; <span class="number">1</span>) &#123;</div><div class="line">    <span class="keyword">var</span> left = str[<span class="number">0</span>];</div><div class="line">    <span class="keyword">var</span> rest = str.slice(<span class="number">1</span>, str.length);</div><div class="line">    <span class="keyword">var</span> preResult = permutate(rest);</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;preResult.length; i++) &#123;</div><div class="line">      <span class="keyword">for</span>(<span class="keyword">var</span> j=<span class="number">0</span>; j&lt;preResult[i].length+<span class="number">1</span>; j++) &#123;</div><div class="line">        <span class="keyword">var</span> tmp = preResult[i].slice(<span class="number">0</span>, j) + left + preResult[i].slice(j, preResult[i].length);</div><div class="line">        result.push(tmp);</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (str.length == <span class="number">1</span>) &#123;</div><div class="line">    <span class="keyword">return</span> [str];</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="keyword">return</span> result;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(permutate(<span class="string">'123'</span>));</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>参考：<a href="http://www.cnblogs.com/kindofblue/p/4947748.html" target="_blank" rel="external">http://www.cnblogs.com/kindofblue/p/4947748.html</a></p>
 
-      <h1 class="post-title">
+      
+    </div>
+
+    <div>
+      
         
-            <a class="post-title-link" href="/2016/08/20/跨域/" itemprop="url">
-              
-                <span itemprop="name">跨域</span>
-              
-            </a>
+
+      
+    </div>
+
+    <div>
+      
         
-      </h1>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-08-20T17:38:50+08:00"
-              content="2016-08-20" >
-          08-20
-        </time>
-      </div>
+      
+    </div>
 
-    </header>
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/算法/" rel="tag">#算法</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/08/31/task29-jQuery懒加载-回到顶部/" rel="next" title="task29-jQuery懒加载&回到顶部">
+                <i class="fa fa-chevron-left"></i> task29-jQuery懒加载&回到顶部
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </article>
 
 
-    
-  </div>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -271,6 +350,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -290,8 +373,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.png"
@@ -341,6 +433,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -444,6 +547,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 

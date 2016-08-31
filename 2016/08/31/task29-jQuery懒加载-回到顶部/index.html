@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Ajax," />
+  <meta name="keywords" content="任务作业," />
 
 
 
@@ -84,16 +84,19 @@
 
 
 
-<meta name="description" content="关于跨域的两件事1. 为什么需要跨域因为 Ajax 请求要按照浏览器的同域策略进行，不能发起跨域的请求。当想要得到不再同域的资源时，必须跨域请求。">
+<meta name="description" content="问答
+如何判断一个元素是否出现在窗口可视范围（浏览器的上边缘和下边缘之间，肉眼可视）。写一个函数 isVisible实现">
 <meta property="og:type" content="article">
-<meta property="og:title" content="跨域">
-<meta property="og:url" content="https://zhangyu921.github.io/2016/08/20/跨域/index.html">
+<meta property="og:title" content="task29-jQuery懒加载&回到顶部">
+<meta property="og:url" content="https://zhangyu921.github.io/2016/08/31/task29-jQuery懒加载-回到顶部/index.html">
 <meta property="og:site_name" content="Yu's">
-<meta property="og:description" content="关于跨域的两件事1. 为什么需要跨域因为 Ajax 请求要按照浏览器的同域策略进行，不能发起跨域的请求。当想要得到不再同域的资源时，必须跨域请求。">
-<meta property="og:updated_time" content="2016-08-21T03:53:27.548Z">
+<meta property="og:description" content="问答
+如何判断一个元素是否出现在窗口可视范围（浏览器的上边缘和下边缘之间，肉眼可视）。写一个函数 isVisible实现">
+<meta property="og:updated_time" content="2016-08-31T15:00:13.122Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="跨域">
-<meta name="twitter:description" content="关于跨域的两件事1. 为什么需要跨域因为 Ajax 请求要按照浏览器的同域策略进行，不能发起跨域的请求。当想要得到不再同域的资源时，必须跨域请求。">
+<meta name="twitter:title" content="task29-jQuery懒加载&回到顶部">
+<meta name="twitter:description" content="问答
+如何判断一个元素是否出现在窗口可视范围（浏览器的上边缘和下边缘之间，肉眼可视）。写一个函数 isVisible实现">
 
 
 
@@ -114,9 +117,9 @@
 
 
 
-  <link rel="canonical" href="https://zhangyu921.github.io/2016/08/20/跨域/"/>
+  <link rel="canonical" href="https://zhangyu921.github.io/2016/08/31/task29-jQuery懒加载-回到顶部/"/>
 
-  <title> 跨域 | Yu's </title>
+  <title> task29-jQuery懒加载&回到顶部 | Yu's </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -246,7 +249,7 @@
             
             
               
-                跨域
+                task29-jQuery懒加载&回到顶部
               
             
           </h1>
@@ -258,11 +261,30 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-08-20T17:38:50+08:00" content="2016-08-20">
-              2016-08-20
+            <time itemprop="dateCreated" datetime="2016-08-31T22:25:27+08:00" content="2016-08-31">
+              2016-08-31
             </time>
           </span>
 
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/前端学习/" itemprop="url" rel="index">
+                    <span itemprop="name">前端学习</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
           
 
           
@@ -286,28 +308,34 @@
       
 
       
-        <h1 id="关于跨域的两件事"><a href="#关于跨域的两件事" class="headerlink" title="关于跨域的两件事"></a>关于跨域的两件事</h1><h2 id="1-为什么需要跨域"><a href="#1-为什么需要跨域" class="headerlink" title="1. 为什么需要跨域"></a>1. 为什么需要跨域</h2><p>因为 Ajax 请求要按照浏览器的同域策略进行，不能发起跨域的请求。当想要得到不再同域的资源时，必须跨域请求。</p>
+        <h2 id="问答"><a href="#问答" class="headerlink" title="问答"></a>问答</h2><ol>
+<li><p>如何判断一个元素是否出现在窗口可视范围（浏览器的上边缘和下边缘之间，肉眼可视）。写一个函数 <code>isVisible</code>实现</p>
 <a id="more"></a>
-<h2 id="2-如何跨域"><a href="#2-如何跨域" class="headerlink" title="2. 如何跨域"></a>2. 如何跨域</h2><ol>
-<li>JSONP</li>
-<li>CORS</li>
-<li>降域</li>
-<li>postMessage事件</li>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">isVisible</span>(<span class="params">$node</span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> scrollTop = $(<span class="built_in">window</span>).scrollTop();</div><div class="line">  <span class="keyword">var</span> winH = $(<span class="built_in">window</span>).height();</div><div class="line">  <span class="keyword">var</span> eleT = $ele.offset().top;</div><div class="line">  <span class="keyword">return</span> (eleT &lt; scrollTop + winH)&amp;&amp;(scrollTop &lt; eleT);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>当窗口滚动时，判断一个元素是不是出现在窗口可视范围。每次出现都在控制台打印 true 。用代码实现</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$(windows).on(<span class="string">'scroll'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">if</span>(isVisible($node))&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'true'</span>);</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+</li>
+<li><p>当窗口滚动时，判断一个元素是不是出现在窗口可视范围。在元素第一次出现时在控制台打印 true，以后再次出现不做任何处理。用代码实现</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">$(windows).on(<span class="string">'scroll'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">if</span>(isVisible($node))&#123;</div><div class="line">    showIt();</div><div class="line">  &#125;</div><div class="line">&#125;);</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">showIt</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">if</span>(!$node.attr(<span class="string">'data-showed'</span>))&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'true'</span>);</div><div class="line">  	$node.attr(<span class="string">'data-showed'</span>,<span class="literal">true</span>);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>图片懒加载的原理是什么？</p>
+<p>懒加载的目的是防止页面上所有的图片同时开始加载。</p>
+<p>通过在图片标签上写入自定义的属性，并把图片本身的src，写到这个属性里。然后再通过 JS ，等这个图片在页面上出现的时候（或者接近页面的时候），写到 img 标签 src 属性里，实现图片的懒加载。</p>
+</li>
 </ol>
-<h3 id="JSONP"><a href="#JSONP" class="headerlink" title="JSONP"></a>JSONP</h3><p>既然Ajax发不出跨域请求，那利用现成的，没有这个限制的请求来完成 Ajax 任务。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"http://a.jirengu.com/haha?callback=res"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">res</span>(<span class="params">result</span>)</span>&#123;</div><div class="line">      ...</div><div class="line">	&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>JSONP就是利用script标签的请求不受同源策略的约束，来实现跨域请求的。</p>
-<p>通过JS创建一个script标签，在标签里的src属性填上要请求的位置，并在后面指定回调函数的名字。本质上这个script标签请求了一段JS代码，这段代码是一个函数带参数的形式，需要的内容就是函数的参数，并在预先写好的JS中定义回调函数的执行。</p>
-<h3 id="CORS"><a href="#CORS" class="headerlink" title="CORS"></a>CORS</h3><p>CORS跨域资源共享，在后台进行操作，后台通过标识，添加一个回复头，浏览器得到这个回复头之后，浏览器会继续去获取数据。 </p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">res.header("Access-Control-Allow-Origin","*");//服务器端回复写法</div></pre></td></tr></table></figure>
-<p>“*”代表接受任何域的请求，也可以写明只接受哪些域下的请求。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">res.header(&quot;Access-Control-Allow-Origin&quot;,&quot;http://zhangyu921.com&quot;);</div></pre></td></tr></table></figure>
-<p>上述是用JS语言写得，不同的后端语言会有不同的表述方法。</p>
-<h3 id="降域跨域"><a href="#降域跨域" class="headerlink" title="降域跨域"></a>降域跨域</h3><p>降域跨域用于类似<code>http://bbs.zhangyu921.com</code>和<code>http://index.zhangyu921.com</code>这两个域名直接，进行的数据传递。</p>
-<p>通过将这两个域名降域成<code>zhangyu921.com</code>实现了这两个页面处于同一域下，ducument的domain属性控制。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">document.domain = "zhangyu921.com";</div></pre></td></tr></table></figure>
-<h3 id="postMessage"><a href="#postMessage" class="headerlink" title="postMessage"></a>postMessage</h3><p>postMessage方式依赖于window的pushMessage方法，对当前页面的iframe标签下的网页进行通信。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">//同步两个input框的内容</div><div class="line">$('#input').addEventListener('input', function()&#123;</div><div class="line">  window.parent.postMessage(this.value,'*');</div><div class="line">&#125;);</div><div class="line"></div><div class="line">window.addEventListener('message',function(e)&#123;</div><div class="line">  $('input').value = e.data;</div><div class="line">  console.log(e.data);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><ol>
+<li><p>实现如下回到顶部效果（难度: <em>*</em>）<br>当页面滚动到一定距离时，窗口右下角会出现<code>回到顶部</code>按钮，点击按钮页面会滚动到顶部。<br><a href="http://book.jirengu.com/jirengu-inc/js-works/gotop/jquery-gotop.html" target="_blank" rel="external">效果预览</a></p>
+<p><a href="http://book.jirengu.com/jirengu-inc/jrg-vip9/members/%E5%BC%A0%E5%AE%87/task29-1.html" target="_blank" rel="external">实现预览</a></p>
+</li>
+<li><p>实现如下图片懒加载效果 (难度：<em>*</em>)<br><a href="http://book.jirengu.com/jirengu-inc/js-works/lazyimg/jquery-lazyload-img.html" target="_blank" rel="external">效果预览</a></p>
+<p><a href="http://book.jirengu.com/jirengu-inc/jrg-vip9/members/%E5%BC%A0%E5%AE%87/task29-2.html" target="_blank" rel="external">实现预览</a></p>
+</li>
+<li><p>实现如下无限滚动效果(难度：<em>**</em>)。<br>当页面滚动会无限加载数据展示到页面。当鼠标放置上去会变色<br><code>提示</code>：当底部加载更多按钮出现时，通过 ajax 发送请求获取数据，append 到容器里。事件绑定使用代理方式。<br><a href="http://jrgzuoye.applinzi.com/%E4%BD%9C%E4%B8%9A%E5%AE%89%E6%8E%92/jscode/JS9-jqueryajax/2.html" target="_blank" rel="external">效果预览</a></p>
+<p>ps：自己实现效果后，可参考 demo 里的注释</p>
+<p><a href="http://zhangyu921.applinzi.com/task29-3.html" target="_blank" rel="external">实现预览</a></p>
+</li>
+</ol>
 
       
     </div>
@@ -330,7 +358,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Ajax/" rel="tag">#Ajax</a>
+            <a href="/tags/任务作业/" rel="tag">#任务作业</a>
           
         </div>
       
@@ -339,16 +367,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/08/08/task26-jQuery-常用方法-ajax/" rel="next" title="task26 jQuery 常用方法&ajax">
-                <i class="fa fa-chevron-left"></i> task26 jQuery 常用方法&ajax
+              <a href="/2016/08/30/scroll事件延迟方法/" rel="next" title="scroll事件延迟方法">
+                <i class="fa fa-chevron-left"></i> scroll事件延迟方法
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/08/21/阻止默认事件和事件冒泡/" rel="prev" title="阻止默认事件和事件冒泡">
-                阻止默认事件和事件冒泡 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/08/31/一个全排列实现/" rel="prev" title="一个全排列实现">
+                一个全排列实现 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -463,7 +491,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#关于跨域的两件事"><span class="nav-number">1.</span> <span class="nav-text">关于跨域的两件事</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-为什么需要跨域"><span class="nav-number">1.1.</span> <span class="nav-text">1. 为什么需要跨域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-如何跨域"><span class="nav-number">1.2.</span> <span class="nav-text">2. 如何跨域</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#JSONP"><span class="nav-number">1.2.1.</span> <span class="nav-text">JSONP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CORS"><span class="nav-number">1.2.2.</span> <span class="nav-text">CORS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#降域跨域"><span class="nav-number">1.2.3.</span> <span class="nav-text">降域跨域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#postMessage"><span class="nav-number">1.2.4.</span> <span class="nav-text">postMessage</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#问答"><span class="nav-number">1.</span> <span class="nav-text">问答</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">2.</span> <span class="nav-text">代码</span></a></li></ol></div>
             
           </div>
         </section>
