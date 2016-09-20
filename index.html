@@ -248,6 +248,144 @@
             
               
                 
+                <a class="post-title-link" href="/2016/09/07/task32-瀑布流新浪新闻获取/" itemprop="url">
+                  task32-瀑布流新浪新闻获取
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-09-07T19:30:29+08:00" content="2016-09-07">
+              2016-09-07
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/前端学习/" itemprop="url" rel="index">
+                    <span itemprop="name">前端学习</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/07/task32-瀑布流新浪新闻获取/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/07/task32-瀑布流新浪新闻获取/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="视频"><a href="#视频" class="headerlink" title="视频"></a>视频</h2><p><a href="http://www.jirengu.com/app/watch/928/1?vsum=67" target="_blank" rel="external">视频：无限加载瀑布流</a></p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><h4 id="实现如下效果"><a href="#实现如下效果" class="headerlink" title="实现如下效果"></a>实现如下效果</h4><ul>
+<li><a href="http://book.jirengu.com/jirengu-inc/js-works/waterfall/waterfull-lazyload-ajax.html" target="_blank" rel="external">查看demo</a></li>
+</ul>
+<p><strong>准备工作</strong></p>
+<ul>
+<li>在图片容器底部底部放一个元素<code>#load</code>，<code>visiablity:hidden</code>，让用户不可见。</li>
+<li>在图片容器放置一个空元素(display:none)，用于瀑布流计算宽度用</li>
+<li>jsonp 接口参数： <a href="http://platform.sina.com.cn/slide/album_tech?jsoncallback=func&amp;app_key=1271687855&amp;num=3&amp;page=4" target="_blank" rel="external">http://platform.sina.com.cn/slide/album_tech?jsoncallback=func&amp;app_key=1271687855&amp;num=3&amp;page=4</a></li>
+</ul>
+<p><strong>流程</strong></p>
+<ul>
+<li>当<code>窗口滚动</code>的时候，如果 load <code>出现在视野</code>，那么执行<code>加载数据并渲染</code></li>
+<li><code>加载数据并渲染</code>：使用 ajax 的 jsonp 获取一组数据，执行 <code>渲染并放置</code></li>
+<li><code>渲染并放置</code>: 把数据填充成模板，append 到图片容器里。 当这些元素里的图片都加载完全时，执行<code>瀑布流放置</code></li>
+<li><code>瀑布流放置</code>: 把新增的这几个元素按照瀑布流的方式放置到合适位置</li>
+</ul>
+<h2 id="完成预览"><a href="#完成预览" class="headerlink" title="完成预览"></a>完成预览</h2><p><a href="http://book.jirengu.com/jirengu-inc/jrg-vip9/members/%E5%BC%A0%E5%AE%87/task32-1.html" target="_blank" rel="external">瀑布流新浪新闻获取</a></p>
+<p>运用了图片加载完成后再布局的方法，使排列整齐</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/09/01/task30-瀑布流/" itemprop="url">
                   task30-瀑布流
                 </a>
@@ -1260,131 +1398,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/07/26/task22-JavaScript-DOM相关/" itemprop="url">
-                  Task22 JavaScript DOM相关
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-26T18:20:38+08:00" content="2016-07-26">
-              2016-07-26
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/前端学习/" itemprop="url" rel="index">
-                    <span itemprop="name">前端学习</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/07/26/task22-JavaScript-DOM相关/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/26/task22-JavaScript-DOM相关/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="问答："><a href="#问答：" class="headerlink" title="问答："></a>问答：</h2><h2 id="dom对象的innerText和innerHTML有什么区别？"><a href="#dom对象的innerText和innerHTML有什么区别？" class="headerlink" title="dom对象的innerText和innerHTML有什么区别？"></a>dom对象的innerText和innerHTML有什么区别？</h2><p>.innerText 和 .innerHTML都是DOM元素的可写属性。</p>
-<p>读取innerText的时候，会将该元素包含的的所有文本内容作为字符串返回，若该元素具有下级元素，则会依次进行字符串的拼接。<br><img src="https://leanote.com/api/file/getImage?fileId=5791854fab644135ea01c3a8" alt="title"></p>
-<p>而.innerHTML是返回HTML结构<br><img src="https://leanote.com/api/file/getImage?fileId=579185a1ab644133ed01c6ec" alt="title"></p>
-<p>通过对.innerText 和 .innerHTML进行赋值，可以改变当前页面元素。<br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/07/26/task22-JavaScript-DOM相关/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1430,7 +1443,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">11</span>
+              <span class="site-state-item-count">12</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
