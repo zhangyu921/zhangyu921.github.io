@@ -115,6 +115,11 @@
     document.querySelector('body').appendChild(img)
   })
 
+  /**
+   * 完成加载添加元素
+   * @param url
+   * @param fn
+   */
   function preloadImg (url, fn) {
     let img = new Image('')
     img.src = url
