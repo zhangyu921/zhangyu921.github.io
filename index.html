@@ -24,7 +24,7 @@
         a {
             color: inherit;
             text-decoration: none;
-            cursor: auto;
+            cursor: pointer;
         }
 
         a:visited, a:-webkit-any-link {
@@ -84,6 +84,7 @@
 
         .ul > li > a {
             padding: 10px;
+
         }
 
         .ul > li > a:before {
@@ -132,56 +133,56 @@
     </ul>
 </div>
 <script>
-  preloadImg('http://bing.ioliu.cn/v1/rand', img => {
-    img.setAttribute('class', 'background-img')
-    document.querySelector('body').appendChild(img)
-  })
+    preloadImg('http://bing.ioliu.cn/v1/rand', img => {
+        img.setAttribute('class', 'background-img');
+        document.querySelector('body').appendChild(img);
+    });
 
-  /**
-   * 加载完成后添加元素
-   * @param url
-   * @param fn
-   */
-  function preloadImg (url, fn) {
-    let img = new Image('')
-    img.src = url
-    if (img.complete) {
-      fn(img)
+    /**
+     * 加载完成后添加元素
+     * @param url
+     * @param fn
+     */
+    function preloadImg (url, fn) {
+        let img = new Image('');
+        img.src = url;
+        if (img.complete) {
+            fn(img);
+        }
+        else {
+            img.onload = () => fn(img);
+        }
     }
-    else {
-      img.onload = () => fn(img)
-    }
-  }
 </script>
 <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
 <script>
-  let card = $('.card')
+    let card = $('.card');
 
-  card.on('mousemove', throttle((e) => {
-    let ax = -(card.innerWidth() / 2 - e.offsetX) / 20
-    let ay = (card.innerHeight() / 2 - e.offsetY) / 10
-    card.attr('style', 'transform: rotateY(' + ax + 'deg) rotateX(' + ay + 'deg);-webkit-transform: rotateY(' + ax + 'deg) rotateX(' + ay + 'deg);-moz-transform: rotateY(' + ax + 'deg) rotateX(' + ay + 'deg)')
-  }, 100))
+    card.on('mousemove', throttle((e) => {
+        let ax = -(card.innerWidth() / 2 - e.offsetX) / 20;
+        let ay = (card.innerHeight() / 2 - e.offsetY) / 10;
+        card.attr('style', 'transform: rotateY(' + ax + 'deg) rotateX(' + ay + 'deg);-webkit-transform: rotateY(' + ax + 'deg) rotateX(' + ay + 'deg);-moz-transform: rotateY(' + ax + 'deg) rotateX(' + ay + 'deg)');
+    }, 100));
 
-  card.on('mouseleave', () => {
-    let ax = 0, ay = 0
-    card.attr('style', 'transform: rotateY(' + ax + 'deg) rotateX(' + ay + 'deg);-webkit-transform: rotateY(' + ax + 'deg) rotateX(' + ay + 'deg);-moz-transform: rotateY(' + ax + 'deg) rotateX(' + ay + 'deg)')
-  })
+    card.on('mouseleave', () => {
+        let ax = 0, ay = 0;
+        card.attr('style', 'transform: rotateY(' + ax + 'deg) rotateX(' + ay + 'deg);-webkit-transform: rotateY(' + ax + 'deg) rotateX(' + ay + 'deg);-moz-transform: rotateY(' + ax + 'deg) rotateX(' + ay + 'deg)');
+    });
 
-  function throttle (func, wait) {
-    let context, args
-    let previous = 0
+    function throttle (func, wait) {
+        let context, args;
+        let previous = 0;
 
-    return function () {
-      let now = +new Date()
-      context = this
-      args = arguments
-      if (now - previous > wait) {
-        func.apply(context, args)
-        previous = now
-      }
+        return function () {
+            let now = +new Date();
+            context = this;
+            args = arguments;
+            if (now - previous > wait) {
+                func.apply(context, args);
+                previous = now;
+            }
+        };
     }
-  }
 
 </script>
 </body>
