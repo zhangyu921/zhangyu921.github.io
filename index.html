@@ -48,7 +48,7 @@
             z-index: 12;
 
             background-color: rgba(0, 0, 0, 0.5);
-            padding: 10px 80px 5px 80px;
+            padding: 20px 80px 16px 80px;
             border-radius: 3px;
             color: #d4d4d4;
 
@@ -61,6 +61,7 @@
 
         .logo {
             transform: translateZ(18px);
+            margin-bottom: 10px;
         }
 
         .ul {
@@ -160,7 +161,7 @@
 
     card.on('mousemove', throttle((e) => {
         let ax = -(card.innerWidth() / 2 - e.offsetX) / 20;
-        let ay = (card.innerHeight() / 2 - e.offsetY) / 10;
+        let ay = (card.innerHeight() / 2 - e.offsetY) / 20;
         card.attr('style', 'transform: rotateY(' + ax + 'deg) rotateX(' + ay + 'deg);-webkit-transform: rotateY(' + ax + 'deg) rotateX(' + ay + 'deg);-moz-transform: rotateY(' + ax + 'deg) rotateX(' + ay + 'deg)');
     }, 100));
 
