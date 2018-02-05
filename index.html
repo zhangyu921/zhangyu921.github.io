@@ -160,20 +160,20 @@
         }
     }
 </script>
-<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<!--<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>-->
 <script>
-    let card = $('.card');
+    // let card = $('.card');
 
-    card.on('mousemove', throttle((e) => {
-        let ax = -(card.innerWidth() / 2 - e.offsetX) / 20;
-        let ay = (card.innerHeight() / 2 - e.offsetY) / 20;
-        card.attr('style', 'transform: rotateY(' + ax + 'deg) rotateX(' + ay + 'deg);-webkit-transform: rotateY(' + ax + 'deg) rotateX(' + ay + 'deg);-moz-transform: rotateY(' + ax + 'deg) rotateX(' + ay + 'deg)');
-    }, 100));
-
-    card.on('mouseleave', () => {
-        let ax = 0, ay = 0;
-        card.attr('style', 'transform: rotateY(' + ax + 'deg) rotateX(' + ay + 'deg);-webkit-transform: rotateY(' + ax + 'deg) rotateX(' + ay + 'deg);-moz-transform: rotateY(' + ax + 'deg) rotateX(' + ay + 'deg)');
-    });
+    // card.on('mousemove', throttle((e) => {
+    //     let ax = -(card.innerWidth() / 2 - e.offsetX) / 20;
+    //     let ay = (card.innerHeight() / 2 - e.offsetY) / 20;
+    //     card.attr('style', 'transform: rotateY(' + ax + 'deg) rotateX(' + ay + 'deg);-webkit-transform: rotateY(' + ax + 'deg) rotateX(' + ay + 'deg);-moz-transform: rotateY(' + ax + 'deg) rotateX(' + ay + 'deg)');
+    // }, 100));
+    //
+    // card.on('mouseleave', () => {
+    //     let ax = 0, ay = 0;
+    //     card.attr('style', 'transform: rotateY(' + ax + 'deg) rotateX(' + ay + 'deg);-webkit-transform: rotateY(' + ax + 'deg) rotateX(' + ay + 'deg);-moz-transform: rotateY(' + ax + 'deg) rotateX(' + ay + 'deg)');
+    // });
 
     function throttle (func, wait) {
         let context, args;
